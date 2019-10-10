@@ -14,7 +14,8 @@ SET order_type =
 CASE 
 when name = 'head345' then 3
 when name = 'image345' then 1
-END;
+END
+WHERE name IN ('head345', 'image345');
 
 //3
 
