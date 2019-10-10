@@ -1,0 +1,4 @@
+the hostname - cs5200-fall2019-busnur.cpt37fr6ify6.us-east-2.rds.amazonaws.com
+username- admin
+password - poorvi123
+port - 3306
