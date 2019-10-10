@@ -1,6 +1,6 @@
 //delete
 
-//1 Delete developer - Delete Alice's primary address
+//1 Delete developer - Delete Alice primary address
  
  DELETE from address 
  WHERE primary_address = 1 and address.person = (SELECT id FROM person where first_name = 'alice') ;
@@ -13,7 +13,7 @@ WHERE order_type IN
 (SELECT max(order_type) from widget) temp);
  
 
-//  3
+//3
 
 DELETE 
 FROM page 

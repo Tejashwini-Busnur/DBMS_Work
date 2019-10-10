@@ -1,6 +1,6 @@
 //updates
 
-//1 Update developer - Update Charlie's primary phone number to 333-444-5555
+//1 Update developer - Update Charlies primary phone number to 333-444-5555
 
 UPDATE phone
 SET phone.phone = 333-444-5555
