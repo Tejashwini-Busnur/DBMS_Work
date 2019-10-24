@@ -1,0 +1,13 @@
+----------------------------------------------------------------
+Wed Oct 16 23:49:08 EDT 2019:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): instance a816c00e-016d-d7d5-6119-00000b17b170 
+on database directory memory:C:\Users\busnu\Documents\workspace-spring-tool-suite-4-4.4.0.RELEASE\cs5200_fall2019_Busnur_Tejashwini_jdbc\testdb with class loader sun.misc.Launcher$AppClassLoader@12edcd21 
+Loaded from file:/C:/Users/busnu/.m2/repository/org/apache/derby/derby/10.14.2.0/derby-10.14.2.0.jar
+java.vendor=Oracle Corporation
+java.runtime.version=1.8.0_191-b12
+user.dir=C:\Users\busnu\Documents\workspace-spring-tool-suite-4-4.4.0.RELEASE\cs5200_fall2019_Busnur_Tejashwini_jdbc
+os.name=Windows 10
+os.arch=amd64
+os.version=10.0
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''
