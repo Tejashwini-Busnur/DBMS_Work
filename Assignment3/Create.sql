@@ -186,6 +186,22 @@ CREATE TABLE `widget` (
 ) ENGINE=InnoDB AUTO_INCREMENT=679 DEFAULT CHARSET=utf8mb4;
 
 
+CREATE TABLE `question` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `text` varchar(50) NOT NULL,
+  `askedBy` int(11) NOT NULL,
+  `postedOn` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `length` int(11) DEFAULT '0',
+  `views` int(11) DEFAULT '0',
+  `endorsedByInstructor` tinyint(1) DEFAULT '0',
+  `module` varchar(20) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `Question_By_User` (`askedBy`),
+  KEY `Question_On_Module` (`module`),
+  CONSTRAINT `Question_By_User` FOREIGN KEY (`askedBy`) REFERENCES `user` (`person`),
+  CONSTRAINT `Question_On_Module` FOREIGN KEY (`module`) REFERENCES `module` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+
 CREATE TABLE `answer` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `text` varchar(45) NOT NULL,
@@ -202,21 +218,7 @@ CREATE TABLE `answer` (
   CONSTRAINT `answer_of_question` FOREIGN KEY (`questionId`) REFERENCES `question` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 
-CREATE TABLE `question` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `text` varchar(50) NOT NULL,
-  `askedBy` int(11) NOT NULL,
-  `postedOn` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
-  `length` int(11) DEFAULT '0',
-  `views` int(11) DEFAULT '0',
-  `endorsedByInstructor` tinyint(1) DEFAULT '0',
-  `module` varchar(20) NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `Question_By_User` (`askedBy`),
-  KEY `Question_On_Module` (`module`),
-  CONSTRAINT `Question_By_User` FOREIGN KEY (`askedBy`) REFERENCES `user` (`person`),
-  CONSTRAINT `Question_On_Module` FOREIGN KEY (`module`) REFERENCES `module` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+
 
 CREATE TABLE `module` (
   `id` varchar(20) NOT NULL DEFAULT '',

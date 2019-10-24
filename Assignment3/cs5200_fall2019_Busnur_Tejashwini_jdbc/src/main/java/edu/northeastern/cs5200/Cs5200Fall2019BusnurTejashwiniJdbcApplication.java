@@ -24,19 +24,19 @@ public class Cs5200Fall2019BusnurTejashwiniJdbcApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(Cs5200Fall2019BusnurTejashwiniJdbcApplication.class, args);
 		hw_jdbc_busnur_tejashwini test = new hw_jdbc_busnur_tejashwini();
-		//test.create();
+		test.create();
 		//test. insertToTableWebsitePrivilege();
 		//test.insertToTablePagePrivilege();
 		//test.createWebsiteForDeveloper();
 		//test.createPageForWebsite();
-		test.delete4();
+		//test.delete4();
 		//testFindAllDevelopers();
 		//testFindDeveloperById();
 		//testFindDeveloperByUsername();
 		//testfindDeveloperByCredentials();
 		//testUpdateDeveloper();
 		//testDeleteDeveloper();
-		testfindAllWebsites();
+		//testfindAllWebsites();
 		//findWebsitesForDeveloper();
 		//testfindWebsiteById();
 		//deleteWebsite();
