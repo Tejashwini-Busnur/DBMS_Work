@@ -71,9 +71,11 @@ public class UniversityDao {
 	}
 
 	public Boolean enrollStudentInSection(Student student, Section section) {
-		if (section.getSeats() == 0) {
+
+		int numOfSeats = section.getSeats();
+		if (numOfSeats == 0) {
 			return false;
-		} else {
+		} else if (numOfSeats > 0) {
 			Enrollment enrollment = new Enrollment(student, section);
 			student.addEnrollment(enrollment);
 			section.addEnrollment(enrollment);
@@ -82,6 +84,7 @@ public class UniversityDao {
 			sectionRepository.save(section);
 			return true;
 		}
+		return false;
 	}
 
 	public List<Person> findAllUsers() {
@@ -104,7 +107,7 @@ public class UniversityDao {
 		return (List<Section>) sectionRepository.findAll();
 	}
 
-	public List<Course> findCourseForAuthor(Faculty faculty) {
+	public List<Course> findCoursesForAuthor(Faculty faculty) {
 		return faculty.getAuthoredCourses();
 	}
 
@@ -124,7 +127,7 @@ public class UniversityDao {
 
 	public List<Section> findSectionsForStudent(Student student) {
 		List<Section> sections = new ArrayList<>();
-		List<Enrollment> enrollments = enrollmentRepository.findEnrollmentsByStudent(student.getId());
+		List<Enrollment> enrollments = enrollmentRepository.findEnrollments(student.getId());
 		for (Enrollment enrollment : enrollments) {
 			Section section = enrollment.getSection();
 			sections.add(section);

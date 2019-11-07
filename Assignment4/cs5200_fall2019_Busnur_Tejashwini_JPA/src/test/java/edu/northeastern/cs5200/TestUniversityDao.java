@@ -131,9 +131,6 @@ public class TestUniversityDao extends Cs5200Fall2019BusnurTejashwiniJpaApplicat
 		Student alice = studentRepository.findStudentByFirstName("Alice");
 		Student bob = studentRepository.findStudentByFirstName("Bob");
 		Student charlie = studentRepository.findStudentByFirstName("Charlie");
-		alice.setEnrollments(new ArrayList<>());
-		bob.setEnrollments(new ArrayList<>());
-		charlie.setEnrollments(new ArrayList<>());
 		dao.enrollStudentInSection(alice, sec1);
 		dao.enrollStudentInSection(alice, sec2);
 		dao.enrollStudentInSection(bob, sec2);
@@ -184,8 +181,8 @@ public class TestUniversityDao extends Cs5200Fall2019BusnurTejashwiniJpaApplicat
 	public void validateCourseAuthorhip() {
 		Faculty alan = facultyRepository.findFacultyByFirstName("Alan");
 		Faculty ada = facultyRepository.findFacultyByFirstName("Ada");
-		List<Course> course1 = dao.findCourseForAuthor(alan);
-		List<Course> course2 = dao.findCourseForAuthor(ada);
+		List<Course> course1 = dao.findCoursesForAuthor(alan);
+		List<Course> course2 = dao.findCoursesForAuthor(ada);
 		assertEquals(2, course1.size());
 		assertEquals(2, course2.size());
 	}

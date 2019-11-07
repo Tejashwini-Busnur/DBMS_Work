@@ -11,6 +11,6 @@ import edu.northeastern.cs5200.jpa.models.Enrollment;
 public interface EnrollmentRepository extends CrudRepository<Enrollment, Integer> {
 	
 	@Query("SELECT enrollment FROM Enrollment enrollment WHERE enrollment.student.id = :studentId")
-    public List<Enrollment> findEnrollmentsByStudent(@Param("studentId") Integer studentId);
+    public List<Enrollment> findEnrollments(@Param("studentId") Integer studentId);
 
 }
